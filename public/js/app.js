@@ -22,7 +22,8 @@ messageTwo.textContent='Loading forcast..'
 weatherform.addEventListener('submit',(e)=>{
     e.preventDefault() // prevents the refresh of browser
     const location = search.value // input value in the html page
-    fetch('http://127.0.0.1:3000/weather?address='+location).then((response)=>{
+    //fetch('http://127.0.0.1:3000/weather?address='+location).then((response)=>{
+    fetch('/weather?address='+location).then((response)=>{
     response.json().then((data)=>{
         if(data.error){
             messageOne.textContent= data.error
